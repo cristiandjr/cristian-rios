@@ -1,38 +1,231 @@
-.App {
-  text-align: center;
+/****************** CONFIG ******************/
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+body {
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/****************** LOGO ******************/
+
+.logo {
+    width: 16.25rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/****************** NAVBAR ******************/
+
+.nav {
+    z-index: 2;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav a.nav-link {
+    font-size: .8rem;
+    letter-spacing: 0.0374rem;
+    cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul li {
+    text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-nav>li>a {
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+    color: white !important;
+    border-bottom: 0.1874rem solid rgb(52, 58, 64);
+}
+
+.navbar-brand {
+    max-width: 17.25rem;
+    padding: 0;
+}
+
+.navbar-nav>li>a.active,
+.navbar-nav>li>a:focus {
+    border-bottom: 0.1874rem solid orange;
+}
+
+.navbar-nav>li>a:hover {
+    border-bottom: 0.1874rem solid orange;
+}
+
+@media(max-width:768px) {
+    .navbar-brand {
+        width: 7rem;
+    }
+}
+
+
+/****************** HEADER ******************/
+
+.header-wrapper {
+    position: relative;
+    background: url(https://cdn.pixabay.com/photo/2015/09/17/17/25/code-944499_960_720.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.tsparticles-canvas-el {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1 !important;
+}
+
+
+/****************** ABOUT ******************/
+
+.photo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: 16rem;
+    border-radius: 50%;
+    padding: .3rem;
+    border: 1px solid orange;
+}
+
+.about-heading {
+    color: orange;
+    text-transform: uppercase;
+}
+
+@media(max-width: 468px) {
+    .profile-img {
+        width: 10rem;
+    }
+}
+
+
+/****************** EXPERIENCE ******************/
+
+.experience {
+    padding: 0.7rem;
+}
+
+.experience-wrapper {
+    position: relative;
+    padding: 3.125rem 0;
+    overflow: hidden;
+}
+
+.experience h1 {
+    text-transform: uppercase;
+    color: orange;
+}
+
+.experience-wrapper::before {
+    position: absolute;
+    content: "";
+    top: -1;
+    left: 50%;
+    margin-left: -0.0625rem;
+    width: 0.125rem;
+    height: 100%;
+    background: black;
+    z-index: 1;
+}
+
+.timeline-block {
+    width: calc(50% + 0.5rem);
+    display: flex;
+    justify-content: space-between;
+    clear: both;
+}
+
+.timeline-block-right {
+    float: right;
+}
+
+.timeline-block-left {
+    float: left;
+    direction: rtl;
+}
+
+.timeline-block-left h3,
+p {
+    float: right;
+}
+
+.marker {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 0.3125rem solid black;
+    background: orange;
+    margin-top: 0.625rem;
+    z-index: 3;
+}
+
+.timeline-content {
+    width: 95%;
+    padding: 0 0.9375rem;
+    color: grey;
+    direction: ltr;
+}
+
+.timeline-content h3 {
+    margin-top: 0.3125rem;
+    color: red;
+    font-weight: 900;
+}
+
+@media(max-width: 768px) {
+    .experience .container {
+        padding-left: 0;
+    }
+    .experience-wrapper::before {
+        left: 0.5rem;
+        margin-bottom: 1.875rem;
+    }
+    .timeline-block-right {
+        float: none;
+        width: 100%;
+    }
+    .timeline-block-left {
+        float: none;
+        direction: ltr;
+        width: 100%;
+    }
+    .timeline-block-left h3 {
+        float: none;
+    }
+    .timeline-block-left p {
+        float: none;
+    }
+}
+
+
+/****************** SERVICES ******************/
+
+
+/****************** PORTFOLIO ******************/
+
+.portfolio-wrapper {
+    background: grey;
+    padding: 3rem 0;
+}
+
+.portfolio-wrapper h1 {
+    color: orange;
+}
+
+.portfolio-image {
+    width: 15rem;
+    border: 1px solid orange;
+    padding: 0 0.5rem;
+}
+
+.portfolio-image-box {
+    position: relative;
+    margin: 1rem;
+}
+
+.overflow {
+    position: absolute;
 }
